@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 20161104094133) do
     t.datetime "updated_at"
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sizes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -67,11 +75,9 @@ ActiveRecord::Schema.define(version: 20161104094133) do
   end
 
   create_table "skus", force: :cascade do |t|
-    t.string   "product_title"
-    t.text     "description"
+    t.integer  "product_id"
     t.string   "color"
-    t.integer  "sizes_id"
-    t.integer  "price"
+    t.integer  "size_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

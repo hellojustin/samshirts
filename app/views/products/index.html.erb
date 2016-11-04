@@ -1,0 +1,11 @@
+<div>Here are all the shirts!</div>
+
+<ul>
+<% @products.each do |product| %>
+  <li class='item'>
+    <div><%= product.title %></div>
+    <div><%= product.description %></div>
+    <div><%= format_price product.price %></div>
+  </li>
+<% end %>
+</ul>
