@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to '/', class: 'navbar-brand' do %>
+        <%= image_tag 'SamCart-horiz-logo.png', class: 'logo' %>
+      <% end %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <%= content_tag :li, class: active_class(new_customer_session_path) do %>
+          <%= link_to 'Sign In', new_customer_session_path %>
+        <% end %>
+        <%= content_tag :li, class: active_class(new_customer_registration_path) do %>
+          <%= link_to 'Sign Up', new_customer_registration_path %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -19,7 +19,8 @@ sizes = Size.create([
 product = Product.create({
   title: 'The Essential SamCart Tee',
   description: 'Next Level 60/40 poly-cotton blended t-shirt with SamCart logo on front. Cool in the summer, freezing in the winter!',
-  price: 1499
+  price: 1499,
+  image_url: 'products/tee-image.jpg'
 })
 
 Sku.create([

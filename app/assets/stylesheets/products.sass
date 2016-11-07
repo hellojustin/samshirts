@@ -1,0 +1,26 @@
+@import 'main'
+
+.container
+  background:     $content-bg-color
+  border-radius:  5px
+  margin-bottom:  10rem
+  padding-top:    5rem
+  padding-bottom: 5rem
+
+.page-title
+  text-align: center
+
+.product-list
+  @include make-row()
+
+  .product
+    @include make-xs-column(12)
+    @include make-sm-column(6)
+    @include make-md-column(4)
+    list-style: none
+    text-align: center
+
+  .product-image
+    width: 100%
+    img
+      width: 100%

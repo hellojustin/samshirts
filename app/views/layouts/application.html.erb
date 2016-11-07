@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Samshirts</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Samshirts</title>
+    <%= yield :head %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<div class='alerts'>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</div>
+    <%= render 'layouts/navbar' %>
 
-<%= yield %>
+    <div class='alerts'>
+      <p class='notice'><%= notice %></p>
+      <p class='alert'><%= alert %></p>
+    </div>
 
-</body>
+    <%= yield %>
+
+  </body>
 </html>
