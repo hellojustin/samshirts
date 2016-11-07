@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # process payments
 gem 'stripe', '~> 1.56.0'
+gem 'aasm'
 
 # manage users
 gem 'devise', '~> 4.2.0'
