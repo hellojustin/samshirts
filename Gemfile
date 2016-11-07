@@ -33,11 +33,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# process payments
 gem 'stripe', '~> 1.56.0'
 
+# manage users
 gem 'devise', '~> 4.2.0'
 
+# Stuff to keep our envs straight:
+gem 'foreman'
 gem 'rails_12factor'
+
 
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
