@@ -1,3 +1,4 @@
 require 'stripe'
 
 Stripe.api_key = ENV['STRIPE_API_KEY']
+::STRIPE_PUBLISHABLE_KEY = ENV['STRIPE_PUBLISHABLE_KEY']

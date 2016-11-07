@@ -10,6 +10,7 @@
 
   <div class='order-form'>
     <%= form_tag new_order_path, method: :post, class: 'form-horizontal' do %>
+      <%= hidden_field_tag :payment_token %>
       <%= form_group do %>
         <%= label_tag :first_name, 'First Name', class: 'control-label' %>
         <%= content_tag :div, class: 'form-control-container' do %>
@@ -60,9 +61,14 @@
       <% end %>
 
       <%= content_tag :div, class: 'submit-button-container' do %>
-        <%= submit_tag 'Buy Now', class: 'btn btn-primary btn-lg' %>
+        <%= submit_tag 'Buy Now', id: 'submitButton', class: 'btn btn-primary btn-lg' %>
       <% end %>
     <% end %>
   </div>
 
 <div>
+
+<% content_for :foot do %>
+  <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js' %>
+  <%= javascript_include_tag 'orders' %>
+<% end %>

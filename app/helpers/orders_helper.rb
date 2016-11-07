@@ -9,4 +9,8 @@ module OrdersHelper
     colors = product.skus.map(&:color).uniq
   end
 
+  def stripe_publishable_key
+    STRIPE_PUBLISHABLE_KEY
+  end
+
 end

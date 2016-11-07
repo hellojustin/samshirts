@@ -15,4 +15,8 @@ module ApplicationHelper
     end
   end
 
+  def stripe_publishable_key
+    STRIPE_PUBLISHABLE_KEY
+  end
+
 end
