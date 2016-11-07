@@ -1,0 +1,68 @@
+<%= content_for :head do %>
+  <%= stylesheet_link_tag 'orders', media: 'all', 'data-turbolinks-track' => true  %>
+<% end %>
+
+<div class='container'>
+
+  <header class='page-title row'>
+    <h1>Buy a SamShirt</h1>
+  </header>
+
+  <div class='order-form'>
+    <%= form_tag new_order_path, method: :post, class: 'form-horizontal' do %>
+      <%= form_group do %>
+        <%= label_tag :first_name, 'First Name', class: 'control-label' %>
+        <%= content_tag :div, class: 'form-control-container' do %>
+          <%= text_field_tag :first_name, '', class: 'form-control' %>
+        <% end %>
+      <% end %>
+
+      <%= form_group do %>
+        <%= label_tag :last_name, 'Last Name', class: 'control-label' %>
+        <%= content_tag :div, class: 'form-control-container' do %>
+          <%= text_field_tag :last_name, '', class: 'form-control' %>
+        <% end %>
+      <% end %>
+
+      <%= form_group do %>
+        <%= label_tag :email, 'Email', class: 'control-label' %>
+        <%= content_tag :div, class: 'form-control-container' do %>
+          <%= text_field_tag :email, '', class: 'form-control' %>
+        <% end %>
+      <% end %>
+
+      <%= form_group do %>
+        <%= label_tag :password, 'Password', class: 'control-label' %>
+        <%= content_tag :div, class: 'form-control-container' do %>
+          <%= password_field_tag :password, '', class: 'form-control' %>
+        <% end %>
+      <% end %>
+
+      <%= form_group do %>
+        <%= label_tag :address, 'Address', class: 'control-label' %>
+        <%= content_tag :div, class: 'form-control-container' do %>
+          <%= text_field_tag :address, '', class: 'form-control' %>
+        <% end %>
+      <% end %>
+
+      <%= form_group do %>
+        <%= label_tag :size, 'Size', class: 'control-label' %>
+        <%= content_tag :div, class: 'form-control-container' do %>
+          <%= select_tag :size, options_for_select( size_options_for_select(@product) ), class: 'form-control' %>
+        <% end %>
+      <% end %>
+
+      <%= form_group do %>
+        <%= label_tag :color, 'Color', class: 'control-label' %>
+        <%= content_tag :div, class: 'form-control-container' do %>
+          <%= select_tag :color, options_for_select( color_options_for_select(@product) ), class: 'form-control' %>
+        <% end %>
+      <% end %>
+
+      <%= content_tag :div, class: 'submit-button-container' do %>
+        <%= submit_tag 'Buy Now', class: 'btn btn-primary btn-lg' %>
+      <% end %>
+    <% end %>
+  </div>
+
+<div>

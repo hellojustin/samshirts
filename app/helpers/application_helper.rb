@@ -9,4 +9,10 @@ module ApplicationHelper
     'active' if path == request.env['PATH_INFO']
   end
 
+  def form_group &block
+    content_tag :div, class: 'form-group' do
+      yield
+    end
+  end
+
 end
